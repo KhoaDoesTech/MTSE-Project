@@ -94,15 +94,6 @@ const Login = () => {
               )}
             </button>
 
-            <div className="flex items-center mb-3 gap-3 justify-center">
-              <p>
-                Don't Have an account ?{" "}
-                <Link className="font-bold" to="/register">
-                  Sign Up
-                </Link>{" "}
-              </p>
-            </div>
-
             <div className="w-full flex justify-center items-center mb-3">
               <div className="w-[45%] bg-slate-700 h-[1px]"></div>
               <div className="w-[10%] flex justify-center items-center">
