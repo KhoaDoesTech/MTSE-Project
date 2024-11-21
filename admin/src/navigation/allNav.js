@@ -43,82 +43,72 @@ export const allNav = [
     },
     {
         id : 5,
-        title : 'Seller Request',
-        icon : <FaCodePullRequest />,
-        role : 'admin',
-        path: '/admin/dashboard/sellers-request'
-    },
-    {
-        id : 6,
         title : 'Live Chat',
         icon : <IoIosChatbubbles />,
         role : 'admin',
         path: '/admin/dashboard/chat-sellers'
     },
     {
-        id : 7,
+        id : 6,
         title : 'Dashboard',
         icon : <AiOutlineDashboard />,
         role : 'seller',
         path: '/seller/dashboard'
     },
     {
-        id : 8,
+        id : 7,
         title : 'Add Product',
         icon : <IoMdAdd />,
         role : 'seller',
         path: '/seller/dashboard/add-product'
     },     
     {
-        id : 9,
+        id : 8,
         title : 'All Product',
         icon : <MdViewList />,
         role : 'seller',
         path: '/seller/dashboard/products'
     },
     {
-        id : 10,
+        id : 9,
         title : 'Discount Product',
         icon : <TbBasketDiscount />,
         role : 'seller',
         path: '/seller/dashboard/discount-product'
     },
     {
-        id : 11,
+        id : 10,
         title : 'Orders',
         icon : <BsCartCheck />,
         role : 'seller',
         path: '/seller/dashboard/orders'
     },
     {
-        id : 12,
+        id : 11,
         title : 'Payments',
         icon : <MdPayment />,
         role : 'seller',
         path: '/seller/dashboard/payments'
     },
     {
-        id : 13,
+        id : 12,
         title : 'Chat-Customer',
         icon : <IoChatbubbles />,
         role : 'seller',
         path: '/seller/dashboard/chat-customer'
     },
     {
-        id : 14,
+        id : 13,
         title : 'Chat-Support',
         icon : <BsFillChatQuoteFill />,
         role : 'seller',
         path: '/seller/dashboard/chat-support'
     },
     {
-        id : 15,
+        id : 14,
         title : 'Profile',
         icon : <CgProfile />,
         role : 'seller',
         path: '/seller/dashboard/profile'
     }
-
-
-
 ]
