@@ -1,26 +1,26 @@
-import React, { useEffect, useRef, useState } from "react";
-import { FaList } from "react-icons/fa6";
-import { IoMdClose } from "react-icons/io";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect, useRef, useState } from 'react';
+import { FaList } from 'react-icons/fa6';
+import { IoMdClose } from 'react-icons/io';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   get_admin_message,
   get_sellers,
   send_message_seller_admin,
   messageClear,
   updateSellerMessage,
-} from "../../store/Reducers/chatReducer";
-import { Link, useParams } from "react-router-dom";
-import { FaRegFaceGrinHearts } from "react-icons/fa6";
-import toast from "react-hot-toast";
+} from '../../store/Reducers/chatReducer';
+import { Link, useParams } from 'react-router-dom';
+import { FaRegFaceGrinHearts } from 'react-icons/fa6';
+import toast from 'react-hot-toast';
 
-import { socket } from "../../utils/utils";
+import { socket } from '../../utils/utils';
 
 const ChatSeller = () => {
   const scrollRef = useRef();
   const [show, setShow] = useState(false);
   const { sellerId } = useParams();
-  const [text, setText] = useState("");
-  const [receverMessage, setReceverMessage] = useState("");
+  const [text, setText] = useState('');
+  const [receverMessage, setReceverMessage] = useState('');
 
   const {
     sellers,
@@ -39,13 +39,13 @@ const ChatSeller = () => {
     e.preventDefault();
     dispatch(
       send_message_seller_admin({
-        senderId: "",
+        senderId: '',
         receverId: sellerId,
         message: text,
-        senderName: "Admin Support",
+        senderName: 'Admin Support',
       })
     );
-    setText("");
+    setText('');
   };
 
   useEffect(() => {
@@ -57,7 +57,7 @@ const ChatSeller = () => {
   useEffect(() => {
     if (successMessage) {
       socket.emit(
-        "send_message_admin_to_seller",
+        'send_message_admin_to_seller',
         seller_admin_message[seller_admin_message.length - 1]
       );
       dispatch(messageClear());
@@ -65,7 +65,7 @@ const ChatSeller = () => {
   }, [successMessage]);
 
   useEffect(() => {
-    socket.on("receved_seller_message", (msg) => {
+    socket.on('receved_seller_message', (msg) => {
       setReceverMessage(msg);
     });
   }, []);
@@ -74,18 +74,18 @@ const ChatSeller = () => {
     if (receverMessage) {
       if (
         receverMessage.senderId === sellerId &&
-        receverMessage.receverId === ""
+        receverMessage.receverId === ''
       ) {
         dispatch(updateSellerMessage(receverMessage));
       } else {
-        toast.success(receverMessage.senderName + " " + "Send A message");
+        toast.success(receverMessage.senderName + ' ' + 'Send A message');
         dispatch(messageClear());
       }
     }
   }, [receverMessage]);
 
   useEffect(() => {
-    scrollRef.current?.scrollIntoView({ behavior: "smooth" });
+    scrollRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [seller_admin_message]);
 
   return (
@@ -94,7 +94,7 @@ const ChatSeller = () => {
         <div className="flex w-full h-full relative">
           <div
             className={`w-[280px] h-full absolute z-10 ${
-              show ? "-left-[16px]" : "-left-[336px]"
+              show ? '-left-[16px]' : '-left-[336px]'
             } md:left-0 md:relative transition-all `}
           >
             <div className="w-full h-[calc(100vh-177px)] bg-[#9e97e9] md:bg-transparent overflow-y-auto">
@@ -104,7 +104,7 @@ const ChatSeller = () => {
                   onClick={() => setShow(!show)}
                   className="block cursor-pointer md:hidden"
                 >
-                  <IoMdClose />{" "}
+                  <IoMdClose />{' '}
                 </span>
               </div>
 
@@ -113,7 +113,7 @@ const ChatSeller = () => {
                   key={i}
                   to={`/admin/dashboard/chat-sellers/${s._id}`}
                   className={`h-[60px] flex justify-start gap-2 items-center text-white px-2 py-2 rounded-md cursor-pointer ${
-                    sellerId === s._id ? "bg-[#8288ed]" : ""
+                    sellerId === s._id ? 'bg-[#8288ed]' : ''
                   }  `}
                 >
                   <div className="relative">
@@ -159,7 +159,7 @@ const ChatSeller = () => {
                 className="w-[35px] flex md:hidden h-[35px] rounded-sm bg-blue-500 shadow-lg hover:shadow-blue-500/50 justify-center cursor-pointer items-center text-white"
               >
                 <span>
-                  <FaList />{" "}
+                  <FaList />{' '}
                 </span>
               </div>
             </div>
@@ -178,7 +178,7 @@ const ChatSeller = () => {
                             <div>
                               <img
                                 className="w-[38px] h-[38px] border-2 border-white rounded-full max-w-[38px] p-[3px]"
-                                src="http://localhost:3001/images/demo.jpg"
+                                src="http://res.cloudinary.com/shareandcare/image/upload/v1732177833/profile/oojo6hlscvmczgqk6x4l.jpg"
                                 alt=""
                               />
                             </div>
@@ -201,7 +201,7 @@ const ChatSeller = () => {
                             <div>
                               <img
                                 className="w-[38px] h-[38px] border-2 border-white rounded-full max-w-[38px] p-[3px]"
-                                src="http://localhost:3001/images/admin.jpg"
+                                src="https://res.cloudinary.com/shareandcare/image/upload/c_thumb,w_200,g_face/v1732190684/profile/loading_hg5elg.jpg"
                                 alt=""
                               />
                             </div>

@@ -1,6 +1,6 @@
-import React from "react";
-import { FaList } from "react-icons/fa";
-import { useSelector } from "react-redux";
+import React from 'react';
+import { FaList } from 'react-icons/fa';
+import { useSelector } from 'react-redux';
 
 const Header = ({ showSidebar, setShowSidebar }) => {
   const { userInfo } = useSelector((state) => state.auth);
@@ -36,10 +36,10 @@ const Header = ({ showSidebar, setShowSidebar }) => {
                 </span>
               </div>
 
-              {userInfo.role === "admin" ? (
+              {userInfo.role === 'admin' ? (
                 <img
                   className="w-[45px] h-[45px] rounded-full overflow-hidden"
-                  src="http://localhost:3001/images/admin.jpg"
+                  src="https://res.cloudinary.com/shareandcare/image/upload/c_thumb,w_200,g_face/v1732190684/profile/loading_hg5elg.jpg"
                   alt=""
                 />
               ) : (

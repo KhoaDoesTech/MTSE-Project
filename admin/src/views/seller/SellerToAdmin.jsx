@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect, useRef, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   get_admin_message,
   get_seller_message,
@@ -7,14 +7,14 @@ import {
   send_message_seller_admin,
   updateAdminMessage,
   messageClear,
-} from "../../store/Reducers/chatReducer";
+} from '../../store/Reducers/chatReducer';
 
-import { socket } from "../../utils/utils";
+import { socket } from '../../utils/utils';
 
 const SellerToAdmin = () => {
   const scrollRef = useRef();
   const dispatch = useDispatch();
-  const [text, setText] = useState("");
+  const [text, setText] = useState('');
   const {
     sellers,
     activeSeller,
@@ -34,16 +34,16 @@ const SellerToAdmin = () => {
     dispatch(
       send_message_seller_admin({
         senderId: userInfo._id,
-        receverId: "",
+        receverId: '',
         message: text,
         senderName: userInfo.name,
       })
     );
-    setText("");
+    setText('');
   };
 
   useEffect(() => {
-    socket.on("receved_admin_message", (msg) => {
+    socket.on('receved_admin_message', (msg) => {
       dispatch(updateAdminMessage(msg));
     });
   }, []);
@@ -51,7 +51,7 @@ const SellerToAdmin = () => {
   useEffect(() => {
     if (successMessage) {
       socket.emit(
-        "send_message_seller_to_admin",
+        'send_message_seller_to_admin',
         seller_admin_message[seller_admin_message.length - 1]
       );
       dispatch(messageClear());
@@ -59,7 +59,7 @@ const SellerToAdmin = () => {
   }, [successMessage]);
 
   useEffect(() => {
-    scrollRef.current?.scrollIntoView({ behavior: "smooth" });
+    scrollRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [seller_admin_message]);
 
   return (
@@ -72,7 +72,7 @@ const SellerToAdmin = () => {
                 <div className="relative">
                   <img
                     className="w-[45px] h-[45px] border-green-500 border-2 max-w-[45px] p-[2px] rounded-full"
-                    src="http://localhost:3001/images/demo.jpg"
+                    src="http://res.cloudinary.com/shareandcare/image/upload/v1732177833/profile/oojo6hlscvmczgqk6x4l.jpg"
                     alt=""
                   />
                   <div className="w-[10px] h-[10px] bg-green-500 rounded-full absolute right-0 bottom-0"></div>
@@ -95,7 +95,7 @@ const SellerToAdmin = () => {
                           <div>
                             <img
                               className="w-[38px] h-[38px] border-2 border-white rounded-full max-w-[38px] p-[3px]"
-                              src="http://localhost:3001/images/demo.jpg"
+                              src="http://res.cloudinary.com/shareandcare/image/upload/v1732177833/profile/oojo6hlscvmczgqk6x4l.jpg"
                               alt=""
                             />
                           </div>
@@ -119,7 +119,7 @@ const SellerToAdmin = () => {
                           <div>
                             <img
                               className="w-[38px] h-[38px] border-2 border-white rounded-full max-w-[38px] p-[3px]"
-                              src="http://localhost:3001/images/admin.jpg"
+                              src="https://res.cloudinary.com/shareandcare/image/upload/c_thumb,w_200,g_face/v1732190684/profile/loading_hg5elg.jpg"
                               alt=""
                             />
                           </div>

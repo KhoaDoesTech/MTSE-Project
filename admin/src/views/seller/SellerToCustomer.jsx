@@ -1,18 +1,18 @@
-import React, { useEffect, useRef, useState } from "react";
-import { FaList } from "react-icons/fa6";
-import { IoMdClose } from "react-icons/io";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect, useRef, useState } from 'react';
+import { FaList } from 'react-icons/fa6';
+import { IoMdClose } from 'react-icons/io';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   get_customer_message,
   get_customers,
   messageClear,
   send_message,
   updateMessage,
-} from "../../store/Reducers/chatReducer";
-import { Link, useParams } from "react-router-dom";
-import toast from "react-hot-toast";
+} from '../../store/Reducers/chatReducer';
+import { Link, useParams } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
-import { socket } from "../../utils/utils";
+import { socket } from '../../utils/utils';
 
 const SellerToCustomer = () => {
   const scrollRef = useRef();
@@ -23,8 +23,8 @@ const SellerToCustomer = () => {
   const { customers, messages, currentCustomer, successMessage } = useSelector(
     (state) => state.chat
   );
-  const [text, setText] = useState("");
-  const [receverMessage, setReceverMessage] = useState("");
+  const [text, setText] = useState('');
+  const [receverMessage, setReceverMessage] = useState('');
 
   const { customerId } = useParams();
 
@@ -50,18 +50,18 @@ const SellerToCustomer = () => {
         name: userInfo?.shopInfo?.shopName,
       })
     );
-    setText("");
+    setText('');
   };
 
   useEffect(() => {
     if (successMessage) {
-      socket.emit("send_seller_message", messages[messages.length - 1]);
+      socket.emit('send_seller_message', messages[messages.length - 1]);
       dispatch(messageClear());
     }
   }, [successMessage]);
 
   useEffect(() => {
-    socket.on("customer_message", (msg) => {
+    socket.on('customer_message', (msg) => {
       setReceverMessage(msg);
     });
   }, []);
@@ -74,14 +74,14 @@ const SellerToCustomer = () => {
       ) {
         dispatch(updateMessage(receverMessage));
       } else {
-        toast.success(receverMessage.senderName + " " + "Send A message");
+        toast.success(receverMessage.senderName + ' ' + 'Send A message');
         dispatch(messageClear());
       }
     }
   }, [receverMessage]);
 
   useEffect(() => {
-    scrollRef.current?.scrollIntoView({ behavior: "smooth" });
+    scrollRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
   return (
@@ -90,7 +90,7 @@ const SellerToCustomer = () => {
         <div className="flex w-full h-full relative">
           <div
             className={`w-[280px] h-full absolute z-10 ${
-              show ? "-left-[16px]" : "-left-[336px]"
+              show ? '-left-[16px]' : '-left-[336px]'
             } md:left-0 md:relative transition-all `}
           >
             <div className="w-full h-[calc(100vh-177px)] bg-[#9e97e9] md:bg-transparent overflow-y-auto">
@@ -100,7 +100,7 @@ const SellerToCustomer = () => {
                   onClick={() => setShow(!show)}
                   className="block cursor-pointer md:hidden"
                 >
-                  <IoMdClose />{" "}
+                  <IoMdClose />{' '}
                 </span>
               </div>
 
@@ -113,7 +113,7 @@ const SellerToCustomer = () => {
                   <div className="relative">
                     <img
                       className="w-[38px] h-[38px] border-white border-2 max-w-[38px] p-[2px] rounded-full"
-                      src="http://localhost:3001/images/admin.jpg"
+                      src="https://res.cloudinary.com/shareandcare/image/upload/c_thumb,w_200,g_face/v1732190684/profile/loading_hg5elg.jpg"
                       alt=""
                     />
                     <div className="w-[10px] h-[10px] bg-green-500 rounded-full absolute right-0 bottom-0"></div>
@@ -136,7 +136,7 @@ const SellerToCustomer = () => {
                   <div className="relative">
                     <img
                       className="w-[45px] h-[45px] border-green-500 border-2 max-w-[45px] p-[2px] rounded-full"
-                      src="http://localhost:3001/images/demo.jpg"
+                      src="http://res.cloudinary.com/shareandcare/image/upload/v1732177833/profile/oojo6hlscvmczgqk6x4l.jpg"
                       alt=""
                     />
                     <div className="w-[10px] h-[10px] bg-green-500 rounded-full absolute right-0 bottom-0"></div>
@@ -152,7 +152,7 @@ const SellerToCustomer = () => {
                 className="w-[35px] flex md:hidden h-[35px] rounded-sm bg-blue-500 shadow-lg hover:shadow-blue-500/50 justify-center cursor-pointer items-center text-white"
               >
                 <span>
-                  <FaList />{" "}
+                  <FaList />{' '}
                 </span>
               </div>
             </div>
@@ -172,7 +172,7 @@ const SellerToCustomer = () => {
                             <div>
                               <img
                                 className="w-[38px] h-[38px] border-2 border-white rounded-full max-w-[38px] p-[3px]"
-                                src="http://localhost:3001/images/demo.jpg"
+                                src="http://res.cloudinary.com/shareandcare/image/upload/v1732177833/profile/oojo6hlscvmczgqk6x4l.jpg"
                                 alt=""
                               />
                             </div>
@@ -196,7 +196,7 @@ const SellerToCustomer = () => {
                             <div>
                               <img
                                 className="w-[38px] h-[38px] border-2 border-white rounded-full max-w-[38px] p-[3px]"
-                                src="http://localhost:3001/images/admin.jpg"
+                                src="https://res.cloudinary.com/shareandcare/image/upload/c_thumb,w_200,g_face/v1732190684/profile/loading_hg5elg.jpg"
                                 alt=""
                               />
                             </div>
