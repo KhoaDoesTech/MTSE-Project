@@ -11,7 +11,7 @@ const {
   mongo: { ObjectId },
 } = require('mongoose');
 const stripe = require('stripe')(
-  'sk_test_51NiHf3JTJACo3dIqGYoLxQgVTy27gnrjzPKxdx9YMvqGiHtYLNHGJZgnV4tql6SqBYLiRtZ5KDDDwW8fN7fCQCeG00a3rgpCZM'
+  'sk_test_51Oml5cGAwoXiNtjJZbPFBKav0pyrR8GSwzUaLHLhInsyeCa4HI8kKf2IcNeUXc8jc8XVzBJyqjKnDLX9MlRjohrL003UDGPZgQ'
 );
 
 class orderController {
