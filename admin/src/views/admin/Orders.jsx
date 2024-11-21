@@ -89,7 +89,7 @@ const Orders = () => {
                 <div
                   className={
                     show === o._id
-                      ? "block border-b border-slate-700 bg-[#000000]"
+                      ? "block border-b border-slate-700 bg-[#c8d6d6]"
                       : "hidden"
                   }
                 >

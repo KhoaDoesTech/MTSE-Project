@@ -90,7 +90,7 @@ const OrderDetails = () => {
                 </div>
                 <span>Price : ${order.price}</span>
 
-                <div className="mt-4 flex flex-col gap-4 bg-[#8288ed] rounded-md">
+                <div className="mt-4 flex flex-col gap-4 bg-[#38a59f] rounded-md">
                   <div className="text-[#00000]">
                     {order.products &&
                       order.products.map((p, i) => (
@@ -120,7 +120,7 @@ const OrderDetails = () => {
 
             <div className="w-[70%]">
               <div className="pl-3">
-                <div className="mt-4 flex flex-col bg-[#8288ed] rounded-md p-4">
+                <div className="mt-4 flex flex-col bg-[#38a59f] rounded-md p-4">
                   {order?.suborder?.map((o, i) => (
                     <div key={i + 20} className="text-[#00000] mt-2">
                       <div className="flex justify-start items-center gap-3">
