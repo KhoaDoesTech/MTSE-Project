@@ -175,9 +175,6 @@ const SellerDashboard = () => {
               <h2 className="font-semibold text-lg text-[#000000] pb-3">
                 Recent Customer Message
               </h2>
-              <Link className="font-semibold text-sm text-[#000000]">
-                View All
-              </Link>
             </div>
 
             <div className="flex flex-col gap-2 pt-6 text-[#000000]">
@@ -226,7 +223,6 @@ const SellerDashboard = () => {
           <h2 className="font-semibold text-lg text-[#000000] pb-3 ">
             Recent Orders
           </h2>
-          <Link className="font-semibold text-sm text-[#000000]">View All</Link>
         </div>
 
         <div className="relative overflow-x-auto">

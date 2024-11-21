@@ -71,41 +71,34 @@ export const allNav = [
     },
     {
         id : 9,
-        title : 'Discount Product',
-        icon : <TbBasketDiscount />,
-        role : 'seller',
-        path: '/seller/dashboard/discount-product'
-    },
-    {
-        id : 10,
         title : 'Orders',
         icon : <BsCartCheck />,
         role : 'seller',
         path: '/seller/dashboard/orders'
     },
     {
-        id : 11,
+        id : 10,
         title : 'Payments',
         icon : <MdPayment />,
         role : 'seller',
         path: '/seller/dashboard/payments'
     },
     {
-        id : 12,
+        id : 11,
         title : 'Chat-Customer',
         icon : <IoChatbubbles />,
         role : 'seller',
         path: '/seller/dashboard/chat-customer'
     },
     {
-        id : 13,
+        id : 12,
         title : 'Chat-Support',
         icon : <BsFillChatQuoteFill />,
         role : 'seller',
         path: '/seller/dashboard/chat-support'
     },
     {
-        id : 14,
+        id : 13,
         title : 'Profile',
         icon : <CgProfile />,
         role : 'seller',

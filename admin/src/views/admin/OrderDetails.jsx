@@ -52,7 +52,7 @@ const OrderDetails = () => {
             value={status}
             name=""
             id=""
-            className="px-4 py-2 focus:border-white outline-none bg-[#475569] border border-gray-200 rounded-md text-[#00000]"
+            className="px-4 py-2 focus:border-white outline-none bg-[#38a59f] border border-gray-200 rounded-md text-[#00000]"
           >
             <option value="pending">pending</option>
             <option value="processing">processing</option>
