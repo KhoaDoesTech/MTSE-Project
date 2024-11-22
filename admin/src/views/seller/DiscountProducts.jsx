@@ -109,7 +109,7 @@ const DiscountProducts = () => {
                     scope="row"
                     className="py-1 px-4 font-medium whitespace-nowrap"
                   >
-                    20
+                    10
                   </td>
 
                   <td

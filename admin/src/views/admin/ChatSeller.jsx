@@ -99,7 +99,7 @@ const ChatSeller = () => {
           >
             <div className="w-full h-[calc(100vh-177px)] bg-[#9e97e9] md:bg-transparent overflow-y-auto">
               <div className="flex text-xl justify-between items-center p-4 md:p-0 md:px-3 md:pb-3 text-white">
-                <h2>Sellers</h2>
+                <h2>Seller</h2>
                 <span
                   onClick={() => setShow(!show)}
                   className="block cursor-pointer md:hidden"
@@ -226,7 +226,7 @@ const ChatSeller = () => {
                 readOnly={sellerId ? false : true}
                 value={text}
                 onChange={(e) => setText(e.target.value)}
-                className="w-full flex justify-between px-2 border border-gray-200 items-center py-[5px] focus:border-white focus:border-2 placeholder:text-white rounded-md outline-none bg-transparent text-[#d0d2d6]"
+                className="w-full flex justify-between px-2 border border-slate-700 items-center py-[5px] focus:border-gray-700 focus:border-2 placeholder:text-gray-700 rounded-md outline-none bg-transparent text-[#000000]"
                 type="text"
                 placeholder="Input Your Message"
               />

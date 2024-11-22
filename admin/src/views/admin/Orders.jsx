@@ -36,13 +36,13 @@ const Orders = () => {
             <option value="10">10</option>
             <option value="20">20</option>
           </select>
-          <input
+          {/* <input
             onChange={(e) => setSearchValue(e.target.value)}
             value={searchValue}
             className="px-4 py-2 focus:border-gray-700 focus:border-2 placeholder:text-gray-700 outline-none bg-[#7bbebb] border border-slate-700 rounded-md text-[#000000]"
             type="text"
             placeholder="search"
-          />
+          /> */}
         </div>
 
         <div className="relative mt-5 overflow-x-auto">

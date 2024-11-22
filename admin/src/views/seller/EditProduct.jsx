@@ -117,6 +117,12 @@ const EditProduct = () => {
 
   const update = (e) => {
     e.preventDefault();
+
+    if (state.price < 0 || state.stock < 0) {
+      toast.error("Price and stock must be non-negative.");
+      return;
+    }
+    
     const obj = {
       name: state.name,
       description: state.description,

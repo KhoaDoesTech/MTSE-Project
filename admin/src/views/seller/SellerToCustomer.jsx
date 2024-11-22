@@ -20,7 +20,7 @@ const SellerToCustomer = () => {
   const [show, setShow] = useState(false);
   const sellerId = 65;
   const { userInfo } = useSelector((state) => state.auth);
-  const { customers, messages, currentCustomer, successMessage } = useSelector(
+  const { customers, activeCustomer, messages, currentCustomer, successMessage } = useSelector(
     (state) => state.chat
   );
   const [text, setText] = useState('');
@@ -111,12 +111,15 @@ const SellerToCustomer = () => {
                   className={`h-[60px] flex justify-start gap-2 items-center text-white px-2 py-2 rounded-md cursor-pointer bg-[#8288ed] `}
                 >
                   <div className="relative">
-                    <img
+                  <img
                       className="w-[38px] h-[38px] border-white border-2 max-w-[38px] p-[2px] rounded-full"
-                      src="https://res.cloudinary.com/shareandcare/image/upload/c_thumb,w_200,g_face/v1732190684/profile/loading_hg5elg.jpg"
+                      src={c.image}
                       alt=""
                     />
-                    <div className="w-[10px] h-[10px] bg-green-500 rounded-full absolute right-0 bottom-0"></div>
+
+                    {activeCustomer.some((a) => a.customerId === c._id) && (
+                      <div className="w-[10px] h-[10px] bg-green-500 rounded-full absolute right-0 bottom-0"></div>
+                    )}
                   </div>
 
                   <div className="flex justify-center items-start flex-col w-full">

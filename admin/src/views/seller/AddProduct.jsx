@@ -122,6 +122,12 @@ const AddProduct = () => {
 
   const add = (e) => {
     e.preventDefault();
+
+    if (state.price < 0 || state.stock < 0) {
+      toast.error("Price and stock must be non-negative.");
+      return;
+    }
+
     const formData = new FormData();
     formData.append("name", state.name);
     formData.append("description", state.description);
@@ -200,7 +206,7 @@ const AddProduct = () => {
                 />
 
                 <div
-                  className={`absolute top-[101%] bg-[#475569] w-full transition-all ${
+                  className={`absolute top-[101%] bg-[#38a59f] w-full transition-all ${
                     cateShow ? "scale-100" : "scale-0"
                   } `}
                 >
@@ -214,11 +220,11 @@ const AddProduct = () => {
                     />
                   </div>
                   <div className="pt-14"></div>
-                  <div className="flex justify-start items-start flex-col h-[200px] overflow-x-scrool">
+                  <div className="flex justify-start items-start flex-col h-[300px] overflow-x-scrool">
                     {allCategory.map((c, i) => (
                       <span
-                        className={`px-4 py-2 hover:bg-indigo-500 hover:text-white hover:shadow-lg w-full cursor-pointer ${
-                          category === c.name && "bg-indigo-500"
+                        className={`px-4 py-2 hover:bg-teal-500 hover:text-white hover:shadow-lg w-full cursor-pointer ${
+                          category === c.name && "bg-teal-500"
                         }`}
                         onClick={() => {
                           setCateShow(false);
@@ -243,6 +249,7 @@ const AddProduct = () => {
                   type="text"
                   name="stock"
                   id="stock"
+                  min="1"
                   placeholder="Stock"
                 />
               </div>
